@@ -23,27 +23,18 @@ arr = numpy.zeros((h,w,3),numpy.float)
 tot = 0
 img_ind =[] 
 for im in imlist:
-
     imarr=numpy.array(Image.open("images_resized/" + im))
-    
-
     li = {'file':im, 'rgb': int(numpy.average(imarr))}
     #print(li)
     img_ind.append(li) 
 
-
 for elem in img_ind:
     print(elem)
-
-
 
 def takeSecond(e):
     return e['rgb']
 
 img_ind.sort(reverse=True, key=takeSecond)
-
-
-
 new_im = Image.new('RGB', (total_width, total_height))
 
 z = 0 

@@ -2,15 +2,12 @@ import eyed3
 import time, musicbrainzngs as mus
 import os, glob,pathlib, os.path, sys
 
-
 mus.set_useragent("Private app", "0.1")
 
 # ************************
 # *** Set music folder ***
 # ************************
 dirname ="/home/username/music/"
-
-
 
 def getListOfFiles(dirName):
     # create a list of file and sub directories 
@@ -45,7 +42,6 @@ def album_list(files):
     return(albumlist)
 
 def get_cover(artist, album, size=500, retry_delay=5, retries=5):
-    """Download the cover art."""
     try:
         data = mus.search_releases(artist=artist,
                                    release=album,
@@ -67,12 +63,6 @@ def get_cover(artist, album, size=500, retry_delay=5, retries=5):
         print("error: Couldn't find album art for")
     except:
         next
-
-
-
-
-
-
 
 liste = getListOfFiles(dirname)
 albumlist = album_list(liste)
