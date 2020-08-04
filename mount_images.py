@@ -15,8 +15,6 @@ skaits = len(imlist)
 N = math.sqrt(skaits)
 pirms, pecr = math.modf(N)
 pec = int(pecr)
-print(skaits, N, pirms, pec)
-input()
 
 total_width = w * pec
 total_height = h * pec
